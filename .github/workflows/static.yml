@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="refresh" content="5;url=https://shop.taijisale.cn">
+    <title>网站迁移通知</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+        #countdown {
+            font-size: 24px; /* 增大字体大小 */
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>网站已经迁移到 <a href="https://shop.taijisale.cn" style="color: lightgray;">shop.taijisale.cn</a></h1>
+        <p>将于 <span id="countdown">5</span> 秒后自动跳转到新域名</p>
+    </div>
+
+    <script>
+        let countdownElement = document.getElementById('countdown');
+        let countdownTime = 5;
+
+        function updateCountdown() {
+            countdownElement.textContent = countdownTime;
+            countdownTime -= 1;
+            if (countdownTime < 0) {
+                clearInterval(countdownInterval);
+            }
+        }
+
+        updateCountdown(); // Initial call to set countdown to 5 seconds
+        let countdownInterval = setInterval(updateCountdown, 1000); // Update every second
+    </script>
+</body>
+</html>
