@@ -2,7 +2,6 @@
 <html lang="zh">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="refresh" content="5;url=https://shop.taijisale.cn">
     <title>网站迁移通知</title>
     <style>
         body {
@@ -19,7 +18,7 @@
             overflow: hidden;
         }
         #countdown {
-            font-size: 24px; /* 增大字体大小 */
+            font-size: 48px; /* 增大字体大小 */
             font-weight: bold;
         }
     </style>
@@ -33,12 +32,14 @@
     <script>
         let countdownElement = document.getElementById('countdown');
         let countdownTime = 5;
+        const redirectUrl = 'https://shop.taijisale.cn';
 
         function updateCountdown() {
             countdownElement.textContent = countdownTime;
             countdownTime -= 1;
             if (countdownTime < 0) {
                 clearInterval(countdownInterval);
+                window.location.replace(redirectUrl); // Perform the redirect
             }
         }
 
